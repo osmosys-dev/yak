@@ -1,0 +1,7 @@
+{
+  "name": "yak",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
