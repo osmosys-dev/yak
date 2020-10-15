@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title> Yak </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +14,36 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Yak a tool to help learning a new language</strong>
-  </div>
+  <ion-list>
+    <ion-card button [routerLink]="['/','language','polski']">
+      <ion-card-header>
+        <ion-card-title>Polski</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit
+        clean.
+      </ion-card-content>
+    </ion-card>
+    <ion-card button [routerLink]="['/','language','francais']">
+      <ion-card-header>
+        <ion-card-title>Francais</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit
+        clean.
+      </ion-card-content>
+    </ion-card>
+    <ion-card button [routerLink]="['/','language','kreol']">
+      <ion-card-header>
+        <ion-card-title>Kreol</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit
+        clean.
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
