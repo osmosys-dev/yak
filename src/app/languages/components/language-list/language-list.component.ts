@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { shareReplay, tap } from 'rxjs/operators';
+import { shareReplay } from 'rxjs/operators';
 import { Language } from 'src/app/model/language';
 import { LanguagesHttpService } from '../../services/languages-http.service';
 
@@ -21,7 +21,6 @@ export class LanguageListComponent implements OnInit {
 
   reload() {
      this.languages$ = this.languageHttpService.findAllLanguages().pipe(
-       tap(val => console.log(val)),
        shareReplay()
     );
   }
