@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { LanguagePageRoutingModule } from './language-routing.module';
 
 import { LanguagePage } from './language.page';
+import { LanguageCardComponent } from './components/language-card/language-card.component';
+import { LanguageListComponent } from './components/language-list/language-list.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { LanguagePage } from './language.page';
     IonicModule,
     LanguagePageRoutingModule
   ],
-  declarations: [LanguagePage]
+  declarations: [LanguagePage, LanguageCardComponent, LanguageListComponent]
 })
 export class LanguagePageModule {}
