@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'languages',
-    loadChildren: () => import('./language/language.module').then( m => m.LanguagePageModule)
+    loadChildren: () => import('./languages/languages.module').then( m => m.LanguagesModule)
   },
   {
     path: '',

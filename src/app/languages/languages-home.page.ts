@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'language-page',
-  templateUrl: './language.page.html',
-  styleUrls: ['./language.page.scss'],
+  templateUrl: './languages-home.page.html',
+  styleUrls: ['./languages-home.page.scss'],
 })
-export class LanguagePage implements OnInit {
+export class LanguagesHomePage implements OnInit {
 
   constructor() { }
 

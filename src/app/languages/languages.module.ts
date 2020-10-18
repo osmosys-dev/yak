@@ -4,21 +4,22 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LanguagePageRoutingModule } from './language-routing.module';
+import { LanguagesRoutingModule } from './languages-routing.module';
 
-import { LanguagePage } from './language.page';
+import { LanguagesHomePage } from './languages-home.page';
+
+import { LanguagesHttpService } from './services/languages-http.service';
 import { LanguageCardComponent } from './components/language-card/language-card.component';
 import { LanguageListComponent } from './components/language-list/language-list.component';
-import { LanguagesHttpService } from './services/languages-http.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LanguagePageRoutingModule
+    LanguagesRoutingModule
   ],
-  declarations: [LanguagePage, LanguageCardComponent, LanguageListComponent],
+  declarations: [LanguagesHomePage, LanguageCardComponent, LanguageListComponent],
   providers: [LanguagesHttpService]
 })
-export class LanguagePageModule {}
+export class LanguagesModule {}
