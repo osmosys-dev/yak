@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { shareReplay } from 'rxjs/operators';
+import { Language } from 'src/app/model/language';
+import { LanguagesHttpService } from '../../services/languages-http.service';
 
 @Component({
   selector: 'app-language-list',
@@ -7,8 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageListComponent implements OnInit {
 
-  constructor() { }
+  languages$: Observable<Language[]>;
 
-  ngOnInit() {}
+  constructor(private languageHttpService: LanguagesHttpService) { }
+
+  ngOnInit() {
+    this.reload();
+  }
+
+  reload() {
+     this.languages$ = this.languageHttpService.findAllLanguages().pipe(
+       shareReplay()
+    );
+  }
 
 }

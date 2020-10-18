@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Language } from 'src/model/language';
-import { Flashcard } from 'src/model/flashcard';
+import { Language } from 'src/app/model/language';
+import { Flashcard } from 'src/app/model/flashcard';
 
 
 @Injectable({

@@ -1,8 +1,8 @@
-<ion-card button>
+<ion-card button *ngFor="let language of languages">
   <ion-card-header>
     <ion-row class="ion-align-items-end">
       <ion-col size="11">
-        <ion-card-title>Polski</ion-card-title>
+        <ion-card-title>{{ language.name }}</ion-card-title>
       </ion-col>
       <ion-col class="ion-text-end">
         <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -29,16 +29,16 @@
       <ion-col size="3">%</ion-col>
       <ion-col size="9">
         <ion-row>
-          <ion-col>100</ion-col>
-          <ion-col>100</ion-col>
-          <ion-col>100</ion-col>
+          <ion-col>{{ language.verb }}</ion-col>
+          <ion-col>{{ language.conversation }}</ion-col>
+          <ion-col>{{ language.vocabulary }}</ion-col>
         </ion-row>
       </ion-col>
     </ion-row>
 
     <ion-row [ngStyle]="{ fontSize: '0.65rem' }">
       <ion-col size="9">Last added a conversation</ion-col>
-      <ion-col size="3" class="ion-text-end">30 days ago</ion-col>
+      <ion-col size="3" class="ion-text-end">{{ language.lastAdded }}</ion-col>
     </ion-row>
   </ion-card-content>
 </ion-card>

@@ -2,5 +2,5 @@
   <ion-list-header>
     <ion-label color="secondary">Languages</ion-label>
   </ion-list-header>
-  <app-language-card></app-language-card>
+  <app-language-card [languages]="languages$ | async"></app-language-card>
 </ion-list>
