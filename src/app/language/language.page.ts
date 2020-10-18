@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-language',
+  selector: 'language-page',
   templateUrl: './language.page.html',
   styleUrls: ['./language.page.scss'],
 })

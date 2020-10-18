@@ -5,9 +5,7 @@ import { Language } from 'src/app/model/language';
 import { Flashcard } from 'src/app/model/flashcard';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LanguagesHttpService {
 
   API_URL = 'http://localhost:9000/yak-api';
