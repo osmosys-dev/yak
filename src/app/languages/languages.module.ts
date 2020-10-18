@@ -11,10 +11,12 @@ import { LanguagesHomePage } from './languages-home.page';
 import { LanguagesHttpService } from './services/languages-http.service';
 import { LanguageCardComponent } from './components/language-card/language-card.component';
 import { LanguageListComponent } from './components/language-list/language-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
     FormsModule,
     IonicModule,
     LanguagesRoutingModule
