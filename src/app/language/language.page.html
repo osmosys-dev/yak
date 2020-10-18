@@ -16,24 +16,57 @@
   </ion-header>
 
   <ion-list>
-    <ion-card button [routerLink]="['/','language','polski']">
+    <ion-card button>
       <ion-card-header>
-        <ion-card-title>Polski</ion-card-title>
+        <ion-row class="ion-align-items-end">
+          <ion-col size="11">
+            <ion-card-title>Polski</ion-card-title>
+          </ion-col>
+          <ion-col class="ion-text-end">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
       </ion-card-header>
-      <ion-card-content> Mowić po Polsku </ion-card-content>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center ion-text-center">
+          <ion-col size="3">Confidence</ion-col>
+          <ion-col size="9">
+            <ion-row>
+              <ion-col>Verb</ion-col>
+              <ion-col>Conversation</ion-col>
+              <ion-col>Vocabulary</ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-align-items-center ion-text-center">
+          <ion-col size="3">%</ion-col>
+          <ion-col size="9">
+            <ion-row>
+              <ion-col>100</ion-col>
+              <ion-col>100</ion-col>
+              <ion-col>100</ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-row [ngStyle]="{fontSize:'0.65rem'}">
+          <ion-col size="9">Last added a conversation</ion-col>
+          <ion-col size="3" class="ion-text-end">30 days ago</ion-col>
+        </ion-row>
+      </ion-card-content>
     </ion-card>
-    <ion-card button [routerLink]="['/','language','francais']">
+    <!-- <ion-card button>
       <ion-card-header>
         <ion-card-title>Francais</ion-card-title>
       </ion-card-header>
       <ion-card-content> Parlez vous Francais ? </ion-card-content>
     </ion-card>
-    <ion-card button [routerLink]="['/','language','kreol']">
+    <ion-card button>
       <ion-card-header>
         <ion-card-title>Kreol</ion-card-title>
       </ion-card-header>
       <ion-card-content> Ou coz Kreol ? </ion-card-content>
-    </ion-card>
+    </ion-card> -->
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="success">
@@ -41,16 +74,3 @@
     </ion-fab-button>
   </ion-fab>
 </ion-content>
-
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{languageUrl |slice:10 | titlecase }}</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-searchbar></ion-searchbar>
-</ion-content> -->
