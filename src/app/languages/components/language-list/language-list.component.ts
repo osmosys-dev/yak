@@ -5,7 +5,7 @@ import { Language } from 'src/app/model/language';
 import { LanguagesHttpService } from '../../services/languages-http.service';
 
 @Component({
-  selector: 'yak-language-list',
+  selector: 'language-list',
   templateUrl: './language-list.component.html',
   styleUrls: ['./language-list.component.scss'],
 })
