@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Language } from 'src/app/model/language';
 
 @Component({
-  selector: 'language-card',
-  templateUrl: './language-card.component.html',
-  styleUrls: ['./language-card.component.scss'],
+  selector: 'collection-card',
+  templateUrl: './collection-card.component.html',
+  styleUrls: ['./collection-card.component.scss'],
 })
-export class LanguageCardComponent implements OnInit {
+export class CollectionCardComponent implements OnInit {
 
   @Input()
   languages: Language[];

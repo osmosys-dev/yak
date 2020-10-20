@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
 import { Language } from 'src/app/model/language';
-import { LanguagesHttpService } from '../../services/languages-http.service';
+import { LanguagesHttpService } from 'src/app/services/languages-http.service';
+
 
 @Component({
-  selector: 'language-list',
-  templateUrl: './language-list.component.html',
-  styleUrls: ['./language-list.component.scss'],
+  selector: 'collection-list',
+  templateUrl: './collection-list.component.html',
+  styleUrls: ['./collection-list.component.scss'],
 })
-export class LanguageListComponent implements OnInit {
+export class CollectionListComponent implements OnInit {
 
   languages$: Observable<Language[]>;
 
