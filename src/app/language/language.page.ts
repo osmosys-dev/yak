@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-language',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./language.page.scss'],
 })
 export class LanguagePage implements OnInit {
+  category: string;
+  routeName: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.category = 'conversation';
+    this.routeName = this.router.url;
   }
+
 
 }

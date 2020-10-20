@@ -3,12 +3,18 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Language section</ion-title>
+    <ion-title>{{routeName | slice:11 | titlecase}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-segment value="conversation">
+  <ion-segment
+    value="conversation"
+    [(ngModel)]="category"
+    class="ion-padding-top ion-padding-bottom"
+    color="secondary"
+    slot="fixed"
+  >
     <ion-segment-button value="conversation">
       <ion-label>Conversation</ion-label>
     </ion-segment-button>
@@ -19,4 +25,18 @@
       <ion-label>Vocabulary</ion-label>
     </ion-segment-button>
   </ion-segment>
+
+  <ng-container [ngSwitch]="category">
+    <language-card-list *ngSwitchCase="'conversation'"> </language-card-list>
+
+    <language-card-list *ngSwitchCase="'verb'"> </language-card-list>
+
+    <language-card-list *ngSwitchCase="'vocabulary'"> </language-card-list>
+  </ng-container>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
