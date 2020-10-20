@@ -1,4 +1,7 @@
-<ion-card button *ngFor="let language of languages">
+<ion-card
+  [routerLink]="['/languages', language.url]"
+  *ngFor="let language of languages"
+>
   <ion-card-header>
     <ion-row class="ion-align-items-end">
       <ion-col size="11">
