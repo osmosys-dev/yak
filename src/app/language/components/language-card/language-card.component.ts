@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { EditLanguageCardComponent } from '../edit-language-card/edit-language-card.component';
+
 
 @Component({
   selector: 'language-card',
@@ -7,8 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalController: ModalController) { }
 
+  async showEditModal() {
+    const modal = await this.modalController.create({
+      component: EditLanguageCardComponent
+    });
+    await modal.present();
+  }
   ngOnInit() {}
 
 }

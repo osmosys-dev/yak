@@ -10,6 +10,7 @@ import { LanguagePageRoutingModule } from './language-routing.module';
 import { LanguagePage } from './language.page';
 import { LanguageCardListComponent } from './components/language-card-list/language-card-list.component';
 import { LanguageCardComponent } from './components/language-card/language-card.component';
+import { EditLanguageCardComponent } from './components/edit-language-card/edit-language-card.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { LanguageCardComponent } from './components/language-card/language-card.
     IonicModule,
     LanguagePageRoutingModule
   ],
-  declarations: [LanguagePage, LanguageCardListComponent, LanguageCardComponent]
+  declarations: [LanguagePage, LanguageCardListComponent, LanguageCardComponent, EditLanguageCardComponent]
 })
 export class LanguagePageModule {}
