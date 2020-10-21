@@ -31,7 +31,6 @@ export class EditLanguageCardComponent implements OnInit {
   }
 
   onChange(selectedValue: string){
-    console.log('Selected value: ', selectedValue);
     this.category = selectedValue;
     this.switchTextLabel(selectedValue);
   }
