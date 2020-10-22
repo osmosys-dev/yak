@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{routeName | slice:11 | titlecase}}</ion-title>
+    <ion-title>{{routeName | slice:13 | titlecase}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -27,11 +27,11 @@
   </ion-segment>
 
   <ng-container [ngSwitch]="category">
-    <language-card-list *ngSwitchCase="'conversation'"> </language-card-list>
+    <languages-card-list *ngSwitchCase="'conversation'"> </languages-card-list>
 
-    <language-card-list *ngSwitchCase="'verb'"> </language-card-list>
+    <languages-card-list *ngSwitchCase="'verb'"> </languages-card-list>
 
-    <language-card-list *ngSwitchCase="'vocabulary'"> </language-card-list>
+    <languages-card-list *ngSwitchCase="'vocabulary'"> </languages-card-list>
   </ng-container>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

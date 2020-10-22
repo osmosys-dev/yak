@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LanguagePageRoutingModule } from './language-routing.module';
+import { LanguagesPageRoutingModule } from './languages-routing.module';
 
-import { LanguagePage } from './language.page';
-import { LanguageCardListComponent } from './components/language-card-list/language-card-list.component';
+import { LanguagesPage } from './languages.page';
+import { LanguagesCardListComponent } from './components/languages-card-list/languages-card-list.component';
 import { LanguageCardComponent } from './components/language-card/language-card.component';
 import { EditLanguageCardComponent } from './components/edit-language-card/edit-language-card.component';
 import { CreateLanguageCardComponent } from './components/create-language-card/create-language-card.component';
@@ -18,8 +18,8 @@ import { CreateLanguageCardComponent } from './components/create-language-card/c
     CommonModule,
     FormsModule,
     IonicModule,
-    LanguagePageRoutingModule
+    LanguagesPageRoutingModule
   ],
-  declarations: [LanguagePage, LanguageCardListComponent, LanguageCardComponent, EditLanguageCardComponent, CreateLanguageCardComponent]
+  declarations: [LanguagesPage, LanguagesCardListComponent, LanguageCardComponent, EditLanguageCardComponent, CreateLanguageCardComponent]
 })
-export class LanguagePageModule {}
+export class LanguagesPageModule {}

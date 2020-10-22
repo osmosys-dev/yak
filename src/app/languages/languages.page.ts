@@ -5,10 +5,10 @@ import { CreateLanguageCardComponent } from './components/create-language-card/c
 
 @Component({
   selector: 'app-language',
-  templateUrl: './language.page.html',
-  styleUrls: ['./language.page.scss'],
+  templateUrl: './languages.page.html',
+  styleUrls: ['./languages.page.scss'],
 })
-export class LanguagePage implements OnInit {
+export class LanguagesPage implements OnInit {
   category: string;
   routeName: string;
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Language } from 'src/app/model/language';
+import { Collection } from 'src/app/model/collection';
 
 @Component({
   selector: 'collection-card',
@@ -9,7 +9,7 @@ import { Language } from 'src/app/model/language';
 export class CollectionCardComponent implements OnInit {
 
   @Input()
-  languages: Language[];
+  collections: Collection[];
   constructor() { }
 
   ngOnInit() {}

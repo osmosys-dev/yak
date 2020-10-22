@@ -1,11 +1,11 @@
-<ion-list *ngIf="languages$ | async; else noLanguage">
+<ion-list *ngIf="collections$ | async; else noCollection">
   <ion-list-header>
-    <ion-label color="secondary">Languages</ion-label>
+    <ion-label color="secondary">Collections</ion-label>
   </ion-list-header>
-  <collection-card [languages]="languages$ | async"></collection-card>
+  <collection-card [collections]="collections$ | async"></collection-card>
 </ion-list>
 
-<ng-template #noLanguage>
+<ng-template #noCollection>
   <ion-grid fixed [ngStyle]="{ height: '100%' }">
     <ion-row class="ion-align-items-center" [ngStyle]="{ height: '100%' }">
       <ion-col size="12">
@@ -25,7 +25,7 @@
             </ion-row>
             <ion-row>
               <ion-col size="12">
-                <ion-text> Add a language to start </ion-text>
+                <ion-text> Add a collection to start </ion-text>
               </ion-col>
             </ion-row>
           </ion-card-content>

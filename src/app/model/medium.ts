@@ -1,6 +1,6 @@
 export interface Medium {
     id: string;
-    flashcardId: string;
+    languageId: string;
     seqNo: number;
     recording: boolean;
     recordingFile: string;

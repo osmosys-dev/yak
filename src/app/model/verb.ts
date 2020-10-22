@@ -1,6 +1,6 @@
 export interface Verb {
     id: string;
-    flashcardId: string;
+    languageId: string;
     seqNo: number;
     verb: string;
     translated: string;
