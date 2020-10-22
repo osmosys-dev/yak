@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then( m => m.PageNotFoundPageModule)
+  },  {
+    path: 'language',
+    loadChildren: () => import('./language/language.module').then( m => m.LanguagePageModule)
   },
+
 ];
 
 @NgModule({

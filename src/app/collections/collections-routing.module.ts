@@ -9,7 +9,7 @@ const routes: Routes = [
     component: CollectionsPage
   },
   {
-    path: ':languageUrl',
+    path: ':languagesUrl',
     loadChildren: () => import ('../languages/languages.module').then(m => m.LanguagesPageModule)
   }
 ];
