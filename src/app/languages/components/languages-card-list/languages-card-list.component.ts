@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Language } from 'src/app/model/language';
+import { LanguagesHttpService } from 'src/app/services/languages-http.service';
 
 @Component({
   selector: 'languages-card-list',
@@ -7,8 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguagesCardListComponent implements OnInit {
 
-  constructor() { }
+  languages$: Observable<Language[]>;
+
+  constructor(private languagesHttpService: LanguagesHttpService) { }
 
   ngOnInit() {}
+
+  reload() {
+
+ }
 
 }

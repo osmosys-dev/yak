@@ -14,14 +14,14 @@ export class CollectionsListComponent implements OnInit {
 
   collections$: Observable<Collection[]>;
 
-  constructor(private collectionHttpService: CollectionsHttpService) { }
+  constructor(private collectionsHttpService: CollectionsHttpService) { }
 
   ngOnInit() {
     this.reload();
   }
 
   reload() {
-     this.collections$ = this.collectionHttpService.findAllCollections().pipe(
+     this.collections$ = this.collectionsHttpService.findAllCollections().pipe(
        shareReplay()
     );
   }

@@ -1,5 +1,5 @@
 <ion-list *ngIf="true; else noLanguage">
-  <language-card></language-card>
+  <language-card [languages]="languages$ | async"></language-card>
 </ion-list>
 
 <ng-template #noLanguage>

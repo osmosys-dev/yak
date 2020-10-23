@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LanguageCardComponent } from './components/language-card/language-card.component';
 
 import { LanguagesPage } from './languages.page';
 
@@ -10,8 +9,8 @@ const routes: Routes = [
     component: LanguagesPage
   },
   {
-    path: ':languageUrl',
-    component: LanguageCardComponent
+    path: ':languageId',
+    loadChildren: () => import('../language/language.module').then( m => m.LanguagePageModule)
   }
 ];
 
