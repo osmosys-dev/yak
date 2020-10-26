@@ -9,8 +9,8 @@ const routes: Routes = [
     component: LanguagesPage
   },
   {
-    path: ':languageId',
-    loadChildren: () => import('../language/language.module').then( m => m.LanguagePageModule)
+    path: ':languagesUrl',
+    loadChildren: () => import ('../flashcards/flashcards.module').then(m => m.FlashcardsPageModule)
   }
 ];
 
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class LanguagesPageRoutingModule {}
+export class LanguagesRoutingModule {}

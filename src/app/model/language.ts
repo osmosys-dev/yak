@@ -1,8 +1,12 @@
 export interface Language {
     id: string;
-    collectionId: string;
+    userId: string;
+    name: string;
+    conversation: number;
+    vocabulary: number;
+    verb: number;
+    lastAdded?: string;
+    url: string;
     seqNo: number;
-    category: string;
-    confident: boolean;
-    dateAdded: string;
+    flashcardsCount?: number;
 }

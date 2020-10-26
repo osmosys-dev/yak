@@ -3,17 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'collections',
-    loadChildren: () => import('./collections/collections.module').then( m => m.CollectionsModule)
+    path: 'languages',
+    loadChildren: () => import('./languages/languages.module').then( m => m.LanguagesModule)
   },
   {
     path: '',
-    redirectTo: 'collections',
+    redirectTo: 'languages',
     pathMatch: 'full'
-  },
-  {
-    path: 'language',
-    loadChildren: () => import('./language/language.module').then( m => m.LanguagePageModule)
   },
   {
     path: '**',

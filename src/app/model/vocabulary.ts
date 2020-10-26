@@ -1,6 +1,6 @@
 export interface Vocabulary {
     id: string;
-    languageId: string;
+    flashcardId: string;
     seqNo: number;
     word: string;
     translated: string;

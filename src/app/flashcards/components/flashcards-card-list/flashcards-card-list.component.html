@@ -1,0 +1,60 @@
+<ion-content>
+  <ion-segment
+    value="conversation"
+    [(ngModel)]="category"
+    class="ion-padding-top ion-padding-bottom"
+    color="secondary"
+    slot="fixed"
+  >
+    <ion-segment-button value="conversation">
+      <ion-label>Conversation</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="verb">
+      <ion-label>Verb</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="vocabulary">
+      <ion-label>Vocabulary</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ng-container [ngSwitch]="category" *ngIf="true; else noLanguage">
+    <ion-list *ngSwitchCase="'conversation'">
+      <flashcard-card [flashcards]="conversations$ | async"></flashcard-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'verb'">
+      <flashcard-card [flashcards]="verbs$ | async"></flashcard-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'vocabulary'">
+      <flashcard-card [flashcards]="vocabularies$ | async"></flashcard-card>
+    </ion-list>
+  </ng-container>
+</ion-content>
+
+<ng-template #noLanguage>
+  <ion-grid fixed [ngStyle]="{ height: '100%' }">
+    <ion-row class="ion-align-items-center" [ngStyle]="{ height: '100%' }">
+      <ion-col size="12">
+        <ion-card color="transparent">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title
+              >There are no flashcards available yet</ion-card-title
+            >
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <ion-row>
+              <ion-col size="12">
+                <ion-icon
+                  color="success"
+                  [ngStyle]="{ fontSize: '40px' }"
+                  name="language-outline"
+                ></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ng-template>
