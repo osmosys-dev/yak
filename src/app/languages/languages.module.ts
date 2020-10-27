@@ -11,7 +11,7 @@ import { LanguagesPage } from './languages.page';
 import { LanguagesListComponent } from './components/languages-list/languages-list.component';
 import { LanguageCardComponent } from './components/language-card/language-card.component';
 
-import { LanguagesHttpService } from './services/languages-http.service';
+import { LanguagesService } from './services/languages.service';
 
 
 
@@ -24,6 +24,6 @@ import { LanguagesHttpService } from './services/languages-http.service';
     LanguagesRoutingModule
   ],
   declarations: [LanguagesPage, LanguagesListComponent, LanguageCardComponent],
-  providers: [LanguagesHttpService]
+  providers: [LanguagesService]
 })
 export class LanguagesModule {}

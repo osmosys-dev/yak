@@ -1,18 +1,50 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{routeName | slice:11 | titlecase}}</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ng-container *ngIf="(data$ | async) as data">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{data.language.url | titlecase}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <flashcards-card-list
+      [data]="data.flashcards"
+      *ngIf="data.flashcards;else noData"
+    ></flashcards-card-list>
 
-<ion-content>
-  <flashcards-card-list></flashcards-card-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="success" (click)="showCreateModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+</ng-container>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success" (click)="showCreateModal()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-</ion-content>
+<ng-template #noData>
+  <ion-grid fixed [ngStyle]="{ height: '100%' }">
+    <ion-row class="ion-align-items-center" [ngStyle]="{ height: '100%' }">
+      <ion-col size="12">
+        <ion-card color="transparent">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title>No flashcards found</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <ion-row>
+              <ion-col size="12">
+                <ion-icon
+                  color="success"
+                  [ngStyle]="{ fontSize: '40px' }"
+                  name="language-outline"
+                ></ion-icon>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12"> Add a flashcard to start learning </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ng-template>

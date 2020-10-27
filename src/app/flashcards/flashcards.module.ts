@@ -11,8 +11,8 @@ import { FlashcardCardComponent } from './components/flashcard-card/flashcard-ca
 import { EditFlashcardCardComponent } from './components/edit-flashcard-card/edit-flashcard-card.component';
 import { CreateFlashcardCardComponent } from './components/create-flashcard-card/create-flashcard-card.component';
 
-import { LanguagesHttpService } from '../languages/services/languages-http.service';
-import { FlashcardsHttpService } from './services/flashcards-http.service';
+import { LanguagesService } from '../languages/services/languages.service';
+import { FlashcardsService } from './services/flashcards.service';
 
 
 @NgModule({
@@ -29,6 +29,6 @@ import { FlashcardsHttpService } from './services/flashcards-http.service';
     EditFlashcardCardComponent,
     CreateFlashcardCardComponent
   ],
-  providers: [LanguagesHttpService, FlashcardsHttpService]
+  providers: [LanguagesService, FlashcardsService]
 })
 export class FlashcardsPageModule {}

@@ -9,7 +9,7 @@ const routes: Routes = [
     component: LanguagesPage
   },
   {
-    path: ':languagesUrl',
+    path: ':languageId',
     loadChildren: () => import ('../flashcards/flashcards.module').then(m => m.FlashcardsPageModule)
   }
 ];
