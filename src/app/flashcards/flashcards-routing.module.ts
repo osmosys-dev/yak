@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: FlashcardsPage
+  },
+  {
+    path: ':flashcardId',
+    loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesPageModule)
   }
 ];
 

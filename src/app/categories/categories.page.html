@@ -1,0 +1,327 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ng-container [ngSwitch]="category">
+  <ion-content *ngSwitchCase="'conversation'">
+    <ion-item-divider>
+      <ion-label>Sentence</ion-label>
+    </ion-item-divider>
+    <ion-item> Jak się masz pan ? </ion-item>
+    <ion-item-divider>
+      <ion-label>Translated</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>How are you sir ?</ion-label>
+    </ion-item>
+  </ion-content>
+
+  <ion-content *ngSwitchCase="'verb'">
+    <ion-item-divider>
+      <ion-label>Verb</ion-label>
+    </ion-item-divider>
+    <ion-item> Jeść </ion-item>
+    <ion-item-divider>
+      <ion-label>Translated</ion-label>
+    </ion-item-divider>
+    <ion-item> To eat </ion-item>
+
+    <ion-segment value="present" [(ngModel)]="tense">
+      <ion-segment-button value="present">
+        <ion-label>Present</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="past">
+        <ion-label>Past</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="future">
+        <ion-label>Future</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ng-container [ngSwitch]="tense">
+      <ion-list *ngSwitchCase="'present'">
+        <ion-slides pager>
+          <ion-slide>
+            <ion-list>
+              <ion-list-header>
+                <ion-label>Masculine</ion-label>
+              </ion-list-header>
+              <ion-grid
+                [ngStyle]="{width: '100vw'}"
+                *ngIf="presentMasculine.length >= 6;else noMasculine"
+              >
+                <ion-row class="ion-justify-content-start">
+                  <ion-col>
+                    <ion-row *ngFor="let subject of present">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label [ngStyle]="{color: 'grey'}"
+                            >{{subject}}</ion-label
+                          >
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col>
+                    <ion-row *ngFor="let tense of presentMasculine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label>{{tense}}</ion-label>
+                        </ion-item></ion-col
+                      >
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-list>
+              <ion-list-header>
+                <ion-label>Feminine</ion-label>
+              </ion-list-header>
+              <ion-grid
+                [ngStyle]="{width: '100vw'}"
+                *ngIf="presentFeminine.length >= 6 ;else noFeminine"
+              >
+                <ion-row class="ion-justify-content-start">
+                  <ion-col>
+                    <ion-row *ngFor="let subject of present">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label [ngStyle]="{color: 'grey'}"
+                            >{{subject}}</ion-label
+                          >
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col>
+                    <ion-row *ngFor="let tense of presentFeminine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label>{{tense}}</ion-label>
+                        </ion-item></ion-col
+                      >
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+          </ion-slide>
+        </ion-slides>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'past'">
+        <ion-slides pager>
+          <ion-slide>
+            <ion-list>
+              <ion-list-header>
+                <ion-label>Masculine</ion-label>
+              </ion-list-header>
+              <ion-grid
+                [ngStyle]="{width: '100vw'}"
+                *ngIf="pastMasculine.length >= 6;else noMasculine"
+              >
+                <ion-row class="ion-justify-content-start">
+                  <ion-col>
+                    <ion-row *ngFor="let subject of masculine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label [ngStyle]="{color: 'grey'}"
+                            >{{subject}}</ion-label
+                          >
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col>
+                    <ion-row *ngFor="let tense of pastMasculine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label>{{tense}}</ion-label>
+                        </ion-item></ion-col
+                      >
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-list>
+              <ion-list-header>
+                <ion-label>Feminine</ion-label>
+              </ion-list-header>
+              <ion-grid
+                [ngStyle]="{width: '100vw'}"
+                *ngIf="pastFeminine.length >= 6 ;else noFeminine"
+              >
+                <ion-row class="ion-justify-content-start">
+                  <ion-col>
+                    <ion-row *ngFor="let subject of feminine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label [ngStyle]="{color: 'grey'}"
+                            >{{subject}}</ion-label
+                          >
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col>
+                    <ion-row *ngFor="let tense of pastFeminine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label>{{tense}}</ion-label>
+                        </ion-item></ion-col
+                      >
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+          </ion-slide>
+        </ion-slides>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'future'">
+        <ion-slides pager>
+          <ion-slide>
+            <ion-list>
+              <ion-list-header>
+                <ion-label>Masculine</ion-label>
+              </ion-list-header>
+              <ion-grid
+                [ngStyle]="{width: '100vw'}"
+                *ngIf="futureMasculine.length >= 6;else noMasculine"
+              >
+                <ion-row class="ion-justify-content-start">
+                  <ion-col>
+                    <ion-row *ngFor="let subject of masculine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label [ngStyle]="{color: 'grey'}"
+                            >{{subject}}</ion-label
+                          >
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col>
+                    <ion-row *ngFor="let tense of futureMasculine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label>{{tense}}</ion-label>
+                        </ion-item></ion-col
+                      >
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-list>
+              <ion-list-header>
+                <ion-label>Feminine</ion-label>
+              </ion-list-header>
+              <ion-grid
+                [ngStyle]="{width: '100vw'}"
+                *ngIf="futureFeminine.length >= 6 ;else noFeminine"
+              >
+                <ion-row class="ion-justify-content-start">
+                  <ion-col>
+                    <ion-row *ngFor="let subject of feminine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label [ngStyle]="{color: 'grey'}"
+                            >{{subject}}</ion-label
+                          >
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col>
+                    <ion-row *ngFor="let tense of futureFeminine">
+                      <ion-col>
+                        <ion-item class="ion-text-center">
+                          <ion-label>{{tense}}</ion-label>
+                        </ion-item></ion-col
+                      >
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+          </ion-slide>
+        </ion-slides>
+      </ion-list>
+    </ng-container>
+  </ion-content>
+
+  <ion-content *ngSwitchCase="'vocabulary'">
+    <ion-list>
+      <ion-item-divider>
+        <ion-label>Word</ion-label>
+      </ion-item-divider>
+      <ion-item>Okulary</ion-item>
+      <ion-item-divider>
+        <ion-label>Translated</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Glasses</ion-label>
+      </ion-item>
+      <ion-item-divider>
+        <ion-label>Plural</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Glasses</ion-label>
+      </ion-item>
+      <ion-item-divider>
+        <ion-label>Used in a sentence</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Oglądasz gdzie są moje okulary ?</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ng-container>
+
+<ng-template #noMasculine>
+  <ion-grid [ngStyle]="{ height: '100%' }">
+    <ion-row class="ion-align-items-center" [ngStyle]="{ height: '100%' }">
+      <ion-col size="12"> No masculine tense available </ion-col>
+      <ion-col size="12">
+        <ion-icon
+          size="large"
+          color="secondary"
+          name="language-outline"
+        ></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ng-template>
+
+<ng-template #noFeminine>
+  <ion-grid [ngStyle]="{ height: '100%' }">
+    <ion-row class="ion-align-items-center" [ngStyle]="{ height: '100%' }">
+      <ion-col size="12"> No feminine tense available </ion-col>
+      <ion-col size="12">
+        <ion-icon
+          size="large"
+          color="secondary"
+          name="language-outline"
+        ></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ng-template>
